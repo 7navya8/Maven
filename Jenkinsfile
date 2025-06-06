@@ -2,19 +2,9 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
+        stage('Test CMD') {
             steps {
-                git 'https://github.com/7navya8/Maven.git'
-            }
-        }
-        stage('Build') {
-            steps {
-                bat '"C:\\Windows\\System32\\cmd.exe" /c mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
-                bat '"C:\\Windows\\System32\\cmd.exe" /c mvn test'
+                bat '"C:\\Windows\\System32\\cmd.exe" /c echo Hello Jenkins!'
             }
         }
     }
