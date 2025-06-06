@@ -1,6 +1,6 @@
+
 pipeline {
     agent any
-
     stages {
         stage('Checkout') {
             steps {
@@ -10,17 +10,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
-                    sh 'mvn clean install'
-                }
+                bat '"C:\\Windows\\System32\\cmd.exe" /c mvn clean install'
             }
         }
 
         stage('Test') {
             steps {
-                script {
-                    sh 'mvn test'
-                }
+                bat '"C:\\Windows\\System32\\cmd.exe" /c mvn test'
             }
         }
     }
